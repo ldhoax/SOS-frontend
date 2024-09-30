@@ -1,0 +1,11 @@
+{
+  "translation": {
+    "home": "Home",
+    "login": "Login",
+    "requesterDashboard": "Requester Dashboard",
+    "supporterDashboard": "Supporter Dashboard",
+    "selectYourRole": "Select Your Role",
+    "requester": "Requester",
+    "supporter": "Supporter"
+  }
+}

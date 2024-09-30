@@ -1,0 +1,11 @@
+{
+  "translation": {
+    "home": "Trang chủ",
+    "login": "Đăng nhập",
+    "requesterDashboard": "Trang quản lý yêu cầu",
+    "supporterDashboard": "Trang quản lý hỗ trợ",
+    "selectYourRole": "Chọn vai trò của bạn",
+    "requester": "Người yêu cầu",
+    "supporter": "Người hỗ trợ"
+  }
+}
