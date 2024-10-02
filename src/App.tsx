@@ -7,11 +7,14 @@ import RoleSelection from './components/RoleSelection';
 import RequesterDashboard from './components/requesters/RequesterDashboard';
 import SupporterDashboard from './components/supporters/SupporterDashboard';
 import Login from './components/Login';
+import Navbar from './components/Navbar';
+
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [userRole, setUserRole] = useState<string | null>(null);
   const { t, i18n } = useTranslation();
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     const storedRole = localStorage.getItem('userRole');
@@ -20,29 +23,36 @@ function App() {
     }
   }, []);
 
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [darkMode]);
+
   const toggleAuth = () => {
     setIsAuthenticated(!isAuthenticated);
   };
 
-  const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);
+  const toggleLanguage = () => {
+    const currentLang = i18n.language;
+    const newLang = currentLang === 'en' ? 'vi' : 'en';
+    i18n.changeLanguage(newLang);
+  };
+
+  const toggleDarkMode = () => {
+    setDarkMode(prevMode => !prevMode);
   };
 
   return (
     <Router>
-      <div className="min-h-screen bg-gray-100">
-        <nav className="bg-white shadow-md">
-          <ul className="flex justify-center space-x-4 p-4">
-            <li><Link to="/" className="text-blue-600 hover:text-blue-800">{t('home')}</Link></li>
-            <li><Link to="/login" className="text-blue-600 hover:text-blue-800">{t('login')}</Link></li>
-            <li><Link to="/requester-dashboard" className="text-blue-600 hover:text-blue-800">{t('requesterDashboard')}</Link></li>
-            <li><Link to="/supporter-dashboard" className="text-blue-600 hover:text-blue-800">{t('supporterDashboard')}</Link></li>
-          </ul>
-          <div className="flex justify-center space-x-2 p-2">
-            <button onClick={() => changeLanguage('en')} className="text-sm">EN</button>
-            <button onClick={() => changeLanguage('vi')} className="text-sm">VI</button>
-          </div>
-        </nav>
+      <div className={`min-h-screen ${darkMode ? 'dark:bg-gray-900 dark:text-white' : 'bg-gray-100 text-black'}`}>
+      <Navbar
+          darkMode={darkMode}
+          toggleLanguage={toggleLanguage}
+          toggleDarkMode={toggleDarkMode}
+        />
         <Routes>
           <Route path="/" element={
             userRole === null ? <RoleSelection /> : (
@@ -50,9 +60,9 @@ function App() {
             )
           } />
           <Route path="/role-selection" element={<RoleSelection />} />
-          <Route path="/login" element={<PublicRoute isAuthenticated={isAuthenticated}><Login toggleAuth={toggleAuth} /></PublicRoute>} />
-          <Route path="/requester-dashboard" element={<PublicRoute isAuthenticated={isAuthenticated}><RequesterDashboard /></PublicRoute>} />
-          <Route path="/supporter-dashboard" element={<PrivateRoute isAuthenticated={isAuthenticated}><SupporterDashboard /></PrivateRoute>} />
+          <Route path="/login" element={<PublicRoute isAuthenticated={isAuthenticated}>{<Login toggleAuth={toggleAuth} />}</PublicRoute>} />
+          <Route path="/requester-dashboard" element={<PublicRoute isAuthenticated={isAuthenticated}>{<RequesterDashboard />}</PublicRoute>} />
+          <Route path="/supporter-dashboard" element={<PrivateRoute isAuthenticated={isAuthenticated}>{<SupporterDashboard />}</PrivateRoute>} />
         </Routes>
       </div>
     </Router>
