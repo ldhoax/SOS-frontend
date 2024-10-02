@@ -5,7 +5,8 @@
     "requesterDashboard": "Trang quản lý yêu cầu",
     "supporterDashboard": "Trang quản lý hỗ trợ",
     "selectYourRole": "Chọn vai trò của bạn",
-    "requester": "Người yêu cầu",
-    "supporter": "Người hỗ trợ"
+    "requester": "Tôi cần trợ giúp",
+    "supporter": "Tôi muốn hỗ trợ",
+    "selectYourRoleDescription": "Vui lòng chọn vai trò của bạn để tiếp tục"
   }
 }

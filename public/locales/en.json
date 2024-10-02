@@ -5,7 +5,8 @@
     "requesterDashboard": "Requester Dashboard",
     "supporterDashboard": "Supporter Dashboard",
     "selectYourRole": "Select Your Role",
-    "requester": "Requester",
-    "supporter": "Supporter"
+    "requester": "I need help",
+    "supporter": "I want to help",
+    "selectYourRoleDescription": "Please select your role to continue"
   }
 }
