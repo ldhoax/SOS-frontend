@@ -44,6 +44,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleLanguage, toggleDarkMod
               <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
                 <Link to="/" onClick={() => setIsMenuOpen(false)} className={`block px-4 py-2 text-sm ${darkMode ? 'dark:text-white dark:hover:bg-gray-600' : 'text-gray-700 hover:bg-gray-100'}`} role="menuitem">{t('home')}</Link>
                 <Link to="/login" onClick={() => setIsMenuOpen(false)} className={`block px-4 py-2 text-sm ${darkMode ? 'dark:text-white dark:hover:bg-gray-600' : 'text-gray-700 hover:bg-gray-100'}`} role="menuitem">{t('login')}</Link>
+                <Link to="/register" className={`${darkMode ? 'text-white hover:text-gray-300' : 'text-black hover:text-gray-700'} font-bold`}>{t('register')}</Link>
                 <Link to="/requester-dashboard" onClick={() => setIsMenuOpen(false)} className={`block px-4 py-2 text-sm ${darkMode ? 'dark:text-white dark:hover:bg-gray-600' : 'text-gray-700 hover:bg-gray-100'}`} role="menuitem">{t('requesterDashboard')}</Link>
                 <Link to="/supporter-dashboard" onClick={() => setIsMenuOpen(false)} className={`block px-4 py-2 text-sm ${darkMode ? 'dark:text-white dark:hover:bg-gray-600' : 'text-gray-700 hover:bg-gray-100'}`} role="menuitem">{t('supporterDashboard')}</Link>
               </div>
@@ -53,6 +54,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleLanguage, toggleDarkMod
         <div className="hidden md:flex space-x-4">
           <Link to="/" className={`${darkMode ? 'text-white hover:text-gray-300' : 'text-black hover:text-gray-700'} font-bold`}>{t('home')}</Link>
           <Link to="/login" className={`${darkMode ? 'text-white hover:text-gray-300' : 'text-black hover:text-gray-700'} font-bold`}>{t('login')}</Link>
+          <Link to="/register" className={`${darkMode ? 'text-white hover:text-gray-300' : 'text-black hover:text-gray-700'} font-bold`}>{t('register')}</Link>
           <Link to="/requester-dashboard" className={`${darkMode ? 'text-white hover:text-gray-300' : 'text-black hover:text-gray-700'} font-bold`}>{t('requesterDashboard')}</Link>
           <Link to="/supporter-dashboard" className={`${darkMode ? 'text-white hover:text-gray-300' : 'text-black hover:text-gray-700'} font-bold`}>{t('supporterDashboard')}</Link>
         </div>

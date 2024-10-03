@@ -7,6 +7,7 @@ import RoleSelection from './components/RoleSelection';
 import RequesterDashboard from './components/requesters/RequesterDashboard';
 import SupporterDashboard from './components/supporters/SupporterDashboard';
 import Login from './components/Login';
+import Register from './components/Register';
 import Navbar from './components/Navbar';
 
 
@@ -60,7 +61,8 @@ function App() {
             )
           } />
           <Route path="/role-selection" element={<RoleSelection />} />
-          <Route path="/login" element={<PublicRoute isAuthenticated={isAuthenticated}>{<Login toggleAuth={toggleAuth} />}</PublicRoute>} />
+          <Route path="/login" element={<PublicRoute isAuthenticated={isAuthenticated}><Login toggleAuth={toggleAuth} darkMode={darkMode} /></PublicRoute>} />
+          <Route path="/register" element={<PublicRoute isAuthenticated={isAuthenticated}><Register darkMode={darkMode} /></PublicRoute>} />
           <Route path="/requester-dashboard" element={<PublicRoute isAuthenticated={isAuthenticated}>{<RequesterDashboard />}</PublicRoute>} />
           <Route path="/supporter-dashboard" element={<PrivateRoute isAuthenticated={isAuthenticated}>{<SupporterDashboard />}</PrivateRoute>} />
         </Routes>

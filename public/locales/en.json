@@ -7,6 +7,11 @@
     "selectYourRole": "Select Your Role",
     "requester": "I need help",
     "supporter": "I want to help",
-    "selectYourRoleDescription": "Please select your role to continue"
+    "selectYourRoleDescription": "Please select your role to continue",
+    "phoneNumber": "Phone Number",
+    "password": "Password",
+    "register": "Register",
+    "registerDescription": "Please register to continue",
+    "confirmPassword": "Confirm Password"
   }
 }

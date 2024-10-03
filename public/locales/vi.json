@@ -7,6 +7,11 @@
     "selectYourRole": "Chọn vai trò của bạn",
     "requester": "Tôi cần trợ giúp",
     "supporter": "Tôi muốn hỗ trợ",
-    "selectYourRoleDescription": "Vui lòng chọn vai trò của bạn để tiếp tục"
+    "selectYourRoleDescription": "Vui lòng chọn vai trò của bạn để tiếp tục",
+    "phoneNumber": "Số điện thoại",
+    "password": "Mật khẩu",
+    "register": "Đăng ký",
+    "registerDescription": "Vui lòng đăng ký để tiếp tục",
+    "confirmPassword": "Xác nhận mật khẩu"
   }
 }
