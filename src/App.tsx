@@ -9,6 +9,8 @@ import SupporterDashboard from './components/supporters/SupporterDashboard';
 import Login from './components/Login';
 import Register from './components/Register';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import PlannedFeatures from './components/PlannedFeatures';
 
 
 function App() {
@@ -65,7 +67,9 @@ function App() {
           <Route path="/register" element={<PublicRoute isAuthenticated={isAuthenticated}><Register darkMode={darkMode} /></PublicRoute>} />
           <Route path="/requester-dashboard" element={<PublicRoute isAuthenticated={isAuthenticated}>{<RequesterDashboard />}</PublicRoute>} />
           <Route path="/supporter-dashboard" element={<PrivateRoute isAuthenticated={isAuthenticated}>{<SupporterDashboard />}</PrivateRoute>} />
+          <Route path="/planned-features" element={<PlannedFeatures />} />
         </Routes>
+        <Footer darkMode={darkMode} />
       </div>
     </Router>
   );
