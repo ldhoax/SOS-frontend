@@ -12,6 +12,16 @@
     "password": "Password",
     "register": "Register",
     "registerDescription": "Please register to continue",
-    "confirmPassword": "Confirm Password"
+    "confirmPassword": "Confirm Password",
+    "createRequest": "Create Request",
+    "email": "Email",
+    "description": "Description",
+    "emergencyLevel": "Emergency Level",
+    "createRequestButton": "Create Request",
+    "cancel": "Cancel",
+    "location": "Location",
+    "latitude": "Latitude",
+    "longitude": "Longitude",
+    "images": "Images"
   }
 }

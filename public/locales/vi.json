@@ -12,6 +12,16 @@
     "password": "Mật khẩu",
     "register": "Đăng ký",
     "registerDescription": "Vui lòng đăng ký để tiếp tục",
-    "confirmPassword": "Xác nhận mật khẩu"
+    "confirmPassword": "Xác nhận mật khẩu",
+    "createRequest": "Tạo yêu cầu",
+    "email": "Email",
+    "description": "Mô tả",
+    "emergencyLevel": "Mức độ khẩn cấp",
+    "createRequestButton": "Tạo yêu cầu",
+    "cancel": "Hủy",
+    "location": "Vị trí",
+    "latitude": "Vĩ độ",
+    "longitude": "Kinh độ",
+    "images": "Thêm hình ảnh"
   }
 }
