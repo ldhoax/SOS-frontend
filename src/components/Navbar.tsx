@@ -42,21 +42,21 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleLanguage, toggleDarkMod
           {isMenuOpen && (
             <div className={`absolute left-0 mt-2 w-48 rounded-md shadow-lg ${darkMode ? 'dark:bg-gray-700' : 'bg-white'} ring-1 ring-black ring-opacity-5`}>
               <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                <Link to="/" onClick={() => setIsMenuOpen(false)} className={`block px-4 py-2 text-sm ${darkMode ? 'dark:text-white dark:hover:bg-gray-600' : 'text-gray-700 hover:bg-gray-100'}`} role="menuitem">{t('home')}</Link>
-                <Link to="/login" onClick={() => setIsMenuOpen(false)} className={`block px-4 py-2 text-sm ${darkMode ? 'dark:text-white dark:hover:bg-gray-600' : 'text-gray-700 hover:bg-gray-100'}`} role="menuitem">{t('login')}</Link>
-                <Link to="/register" onClick={() => setIsMenuOpen(false)} className={`block px-4 py-2 text-sm ${darkMode ? 'dark:text-white dark:hover:bg-gray-600' : 'text-gray-700 hover:bg-gray-100'}`} role="menuitem">{t('register')}</Link>
-                <Link to="/requester-dashboard" onClick={() => setIsMenuOpen(false)} className={`block px-4 py-2 text-sm ${darkMode ? 'dark:text-white dark:hover:bg-gray-600' : 'text-gray-700 hover:bg-gray-100'}`} role="menuitem">{t('requesterDashboard')}</Link>
-                <Link to="/supporter-dashboard" onClick={() => setIsMenuOpen(false)} className={`block px-4 py-2 text-sm ${darkMode ? 'dark:text-white dark:hover:bg-gray-600' : 'text-gray-700 hover:bg-gray-100'}`} role="menuitem">{t('supporterDashboard')}</Link>
+                <Link to="/" onClick={() => setIsMenuOpen(false)} className={`block px-4 py-2 text-sm ${darkMode ? 'dark:text-white dark:hover:bg-gray-600' : 'text-gray-700 hover:bg-gray-100'}`} role="menuitem">{t('general.home')}</Link>
+                <Link to="/login" onClick={() => setIsMenuOpen(false)} className={`block px-4 py-2 text-sm ${darkMode ? 'dark:text-white dark:hover:bg-gray-600' : 'text-gray-700 hover:bg-gray-100'}`} role="menuitem">{t('general.login')}</Link>
+                <Link to="/register" onClick={() => setIsMenuOpen(false)} className={`block px-4 py-2 text-sm ${darkMode ? 'dark:text-white dark:hover:bg-gray-600' : 'text-gray-700 hover:bg-gray-100'}`} role="menuitem">{t('general.register')}</Link>
+                <Link to="/requester-dashboard" onClick={() => setIsMenuOpen(false)} className={`block px-4 py-2 text-sm ${darkMode ? 'dark:text-white dark:hover:bg-gray-600' : 'text-gray-700 hover:bg-gray-100'}`} role="menuitem">{t('requester.requesterDashboard')}</Link>
+                <Link to="/supporter-dashboard" onClick={() => setIsMenuOpen(false)} className={`block px-4 py-2 text-sm ${darkMode ? 'dark:text-white dark:hover:bg-gray-600' : 'text-gray-700 hover:bg-gray-100'}`} role="menuitem">{t('supporter.supporterDashboard')}</Link>
               </div>
             </div>
           )}
         </div>
         <div className="hidden md:flex space-x-4">
-          <Link to="/" className={`${darkMode ? 'text-white hover:text-gray-300' : 'text-black hover:text-gray-700'} font-bold`}>{t('home')}</Link>
-          <Link to="/login" className={`${darkMode ? 'text-white hover:text-gray-300' : 'text-black hover:text-gray-700'} font-bold`}>{t('login')}</Link>
-          <Link to="/register" className={`${darkMode ? 'text-white hover:text-gray-300' : 'text-black hover:text-gray-700'} font-bold`}>{t('register')}</Link>
-          <Link to="/requester-dashboard" className={`${darkMode ? 'text-white hover:text-gray-300' : 'text-black hover:text-gray-700'} font-bold`}>{t('requesterDashboard')}</Link>
-          <Link to="/supporter-dashboard" className={`${darkMode ? 'text-white hover:text-gray-300' : 'text-black hover:text-gray-700'} font-bold`}>{t('supporterDashboard')}</Link>
+          <Link to="/" className={`${darkMode ? 'text-white hover:text-gray-300' : 'text-black hover:text-gray-700'} font-bold`}>{t('general.home')}</Link>
+          <Link to="/login" className={`${darkMode ? 'text-white hover:text-gray-300' : 'text-black hover:text-gray-700'} font-bold`}>{t('general.login')}</Link>
+          <Link to="/register" className={`${darkMode ? 'text-white hover:text-gray-300' : 'text-black hover:text-gray-700'} font-bold`}>{t('general.register')}</Link>
+          <Link to="/requester-dashboard" className={`${darkMode ? 'text-white hover:text-gray-300' : 'text-black hover:text-gray-700'} font-bold`}>{t('requester.requesterDashboard')}</Link>
+          <Link to="/supporter-dashboard" className={`${darkMode ? 'text-white hover:text-gray-300' : 'text-black hover:text-gray-700'} font-bold`}>{t('supporter.supporterDashboard')}</Link>
         </div>
         <div className="flex space-x-2">
           <button onClick={toggleLanguage} className={`text-sm ${darkMode ? 'dark:bg-blue-600 dark:hover:bg-blue-700' : 'bg-blue-500 hover:bg-blue-700'} text-white font-bold py-1 px-2 rounded`}>

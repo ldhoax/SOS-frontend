@@ -65,8 +65,8 @@ function App() {
           <Route path="/role-selection" element={<RoleSelection />} />
           <Route path="/login" element={<PublicRoute isAuthenticated={isAuthenticated}><Login toggleAuth={toggleAuth} darkMode={darkMode} /></PublicRoute>} />
           <Route path="/register" element={<PublicRoute isAuthenticated={isAuthenticated}><Register darkMode={darkMode} /></PublicRoute>} />
-          <Route path="/requester-dashboard" element={<PublicRoute isAuthenticated={isAuthenticated}>{<RequesterDashboard />}</PublicRoute>} />
-          <Route path="/supporter-dashboard" element={<PrivateRoute isAuthenticated={isAuthenticated}>{<SupporterDashboard />}</PrivateRoute>} />
+          <Route path="/requester-dashboard" element={<PublicRoute isAuthenticated={isAuthenticated}>{<RequesterDashboard darkMode={darkMode} />}</PublicRoute>} />
+          <Route path="/supporter-dashboard" element={<PrivateRoute isAuthenticated={isAuthenticated}>{<SupporterDashboard darkMode={darkMode} />}</PrivateRoute>} />
           <Route path="/planned-features" element={<PlannedFeatures />} />
         </Routes>
         <Footer darkMode={darkMode} />

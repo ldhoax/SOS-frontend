@@ -29,11 +29,11 @@ const Login: React.FC<LoginProps> = ({ toggleAuth, darkMode }) => {
   return (
     <div className="flex justify-center items-center min-h-screen">
       <div className={`p-8 rounded shadow-md w-96 ${darkMode ? 'bg-gray-800' : 'bg-white'}`}>
-        <h1 className={`text-2xl font-bold mb-6 text-center ${darkMode ? 'text-white' : 'text-gray-900'}`}>{t('login')}</h1>
+        <h1 className={`text-2xl font-bold mb-6 text-center ${darkMode ? 'text-white' : 'text-gray-900'}`}>{t('general.login')}</h1>
         <form onSubmit={handleLogin}>
           <div className="mb-4">
             <label htmlFor="phoneNumber" className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-              {t('phoneNumber')}
+              {t('requester.phoneNumber')}
             </label>
             <input
               type="tel"
@@ -48,7 +48,7 @@ const Login: React.FC<LoginProps> = ({ toggleAuth, darkMode }) => {
           </div>
           <div className="mb-6">
             <label htmlFor="password" className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-              {t('password')}
+              {t('login.password')}
             </label>
             <input
               type="password"
@@ -69,7 +69,7 @@ const Login: React.FC<LoginProps> = ({ toggleAuth, darkMode }) => {
                 : 'bg-blue-500 text-white hover:bg-blue-600'
             }`}
           >
-            {t('login')}
+            {t('general.login')}
           </button>
         </form>
       </div>

@@ -1,27 +1,35 @@
 {
   "translation": {
-    "home": "Home",
-    "login": "Login",
-    "requesterDashboard": "Requester Dashboard",
-    "supporterDashboard": "Supporter Dashboard",
-    "selectYourRole": "Select Your Role",
-    "requester": "I need help",
-    "supporter": "I want to help",
-    "selectYourRoleDescription": "Please select your role to continue",
-    "phoneNumber": "Phone Number",
-    "password": "Password",
-    "register": "Register",
-    "registerDescription": "Please register to continue",
-    "confirmPassword": "Confirm Password",
-    "createRequest": "Create Request",
-    "email": "Email",
-    "description": "Description",
-    "emergencyLevel": "Emergency Level",
-    "createRequestButton": "Create Request",
-    "cancel": "Cancel",
-    "location": "Location",
-    "latitude": "Latitude",
-    "longitude": "Longitude",
-    "images": "Images"
+    "general": {
+      "home": "Home",
+      "login": "Login",
+      "register": "Register",
+      "registerDescription": "Please register to continue",
+      "cancel": "Cancel"
+    },
+    "roleSelector": {
+      "selectYourRole": "Select Your Role",
+      "selectYourRoleDescription": "Please select your role to continue",
+      "requester": "I need help",
+      "supporter": "I want to help"
+    },
+    "requester": {
+      "requesterDashboard": "Requester Dashboard",
+      "createRequest": "Create Request",
+      "email": "Email",
+      "description": "Description",
+      "emergencyLevel": "Emergency Level",
+      "shortDescription": "Short Description",
+      "createRequestButton": "Create Request",
+      "location": "Location",
+      "latitude": "Latitude",
+      "longitude": "Longitude",
+      "images": "Images",
+      "phoneNumber": "Phone Number",
+      "atLeastOneValid": "At least one valid email or phone number is required"
+    },
+    "supporter": {
+      "supporterDashboard": "Supporter Dashboard"
+    }
   }
 }

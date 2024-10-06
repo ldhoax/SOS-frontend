@@ -1,27 +1,33 @@
 {
   "translation": {
-    "home": "Trang chủ",
-    "login": "Đăng nhập",
-    "requesterDashboard": "Trang quản lý yêu cầu",
-    "supporterDashboard": "Trang quản lý hỗ trợ",
-    "selectYourRole": "Chọn vai trò của bạn",
-    "requester": "Tôi cần trợ giúp",
-    "supporter": "Tôi muốn hỗ trợ",
-    "selectYourRoleDescription": "Vui lòng chọn vai trò của bạn để tiếp tục",
-    "phoneNumber": "Số điện thoại",
-    "password": "Mật khẩu",
-    "register": "Đăng ký",
-    "registerDescription": "Vui lòng đăng ký để tiếp tục",
-    "confirmPassword": "Xác nhận mật khẩu",
-    "createRequest": "Tạo yêu cầu",
-    "email": "Email",
-    "description": "Mô tả",
-    "emergencyLevel": "Mức độ khẩn cấp",
-    "createRequestButton": "Tạo yêu cầu",
-    "cancel": "Hủy",
-    "location": "Vị trí",
-    "latitude": "Vĩ độ",
-    "longitude": "Kinh độ",
-    "images": "Thêm hình ảnh"
+    "general": {
+      "home": "Trang chủ",
+      "login": "Đăng nhập",
+      "register": "Đăng ký",
+      "registerDescription": "Vui lòng đăng ký để tiếp tục",
+      "cancel": "Hủy"
+    },
+    "roleSelector": {
+      "selectYourRole": "Chọn vai trò của bạn",
+      "selectYourRoleDescription": "Vui lòng chọn vai trò của bạn để tiếp tục"
+    },
+    "requester": {
+      "requesterDashboard": "Trang quản lý yêu cầu",
+      "createRequest": "Tạo yêu cầu",
+      "email": "Email",
+      "description": "Mô tả",
+      "emergencyLevel": "Mức độ khẩn cấp",
+      "createRequestButton": "Tạo yêu cầu",
+      "location": "Vị trí",
+      "latitude": "Vĩ độ",
+      "longitude": "Kinh độ",
+      "images": "Thêm hình ảnh",
+      "shortDescription": "Mô tả ngắn",
+      "phoneNumber": "Số điện thoại",
+      "atLeastOneValid": "Cần có số điện thoại hoặc email hợp lệ"
+    },
+    "supporter": {
+      "supporterDashboard": "Trang quản lý hỗ trợ"
+    }
   }
 }

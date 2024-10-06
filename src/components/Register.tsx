@@ -25,11 +25,11 @@ const Register: React.FC<RegisterProps> = ({ darkMode }) => {
   return (
     <div className="flex justify-center items-center min-h-screen">
       <div className={`p-8 rounded shadow-md w-96 ${darkMode ? 'bg-gray-800' : 'bg-white'}`}>
-        <h1 className={`text-2xl font-bold mb-6 text-center ${darkMode ? 'text-white' : 'text-gray-900'}`}>{t('register')}</h1>
+        <h1 className={`text-2xl font-bold mb-6 text-center ${darkMode ? 'text-white' : 'text-gray-900'}`}>{t('general.register')}</h1>
         <form onSubmit={handleRegister}>
           <div className="mb-4">
             <label htmlFor="phoneNumber" className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-              {t('phoneNumber')}
+              {t('register.phoneNumber')}
             </label>
             <input
               type="tel"
@@ -49,7 +49,7 @@ const Register: React.FC<RegisterProps> = ({ darkMode }) => {
           </div>
           <div className="mb-4">
             <label htmlFor="password" className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-              {t('password')}
+              {t('register.password')}
             </label>
             <input
               type="password"
@@ -64,7 +64,7 @@ const Register: React.FC<RegisterProps> = ({ darkMode }) => {
           </div>
           <div className="mb-6">
             <label htmlFor="confirmPassword" className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-              {t('confirmPassword')}
+              {t('register.confirmPassword')}
             </label>
             <input
               type="password"
@@ -85,7 +85,7 @@ const Register: React.FC<RegisterProps> = ({ darkMode }) => {
                 : 'bg-blue-500 text-white hover:bg-blue-600'
             }`}
           >
-            {t('register')}
+            {t('general.register')}
           </button>
         </form>
       </div>
