@@ -5,7 +5,10 @@
       "login": "Login",
       "register": "Register",
       "registerDescription": "Please register to continue",
-      "cancel": "Cancel"
+      "cancel": "Cancel",
+      "days": "days",
+      "hours": "hours",
+      "minutes": "minutes"
     },
     "roleSelector": {
       "selectYourRole": "Select Your Role",
@@ -17,13 +20,15 @@
       "requesterDashboard": "Requester Dashboard",
       "createRequest": "Create Request",
       "email": "Email",
-      "description": "Description",
+      "description": "Detailed Description",
       "emergencyLevel": "Emergency Level",
       "shortDescription": "Short Description",
+      "contact": "Contact",
       "createRequestButton": "Create Request",
       "location": "Location",
       "latitude": "Latitude",
       "longitude": "Longitude",
+      "requested": "Requested",
       "images": "Images",
       "phoneNumber": "Phone Number",
       "atLeastOneValid": "At least one valid email or phone number is required"

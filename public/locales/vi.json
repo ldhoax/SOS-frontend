@@ -5,7 +5,10 @@
       "login": "Đăng nhập",
       "register": "Đăng ký",
       "registerDescription": "Vui lòng đăng ký để tiếp tục",
-      "cancel": "Hủy"
+      "cancel": "Hủy",
+      "days": "ngày",
+      "hours": "giờ",
+      "minutes": "phút"
     },
     "roleSelector": {
       "selectYourRole": "Chọn vai trò của bạn",
@@ -15,10 +18,12 @@
       "requesterDashboard": "Trang quản lý yêu cầu",
       "createRequest": "Tạo yêu cầu",
       "email": "Email",
-      "description": "Mô tả",
+      "description": "Mô tả chi tiết",
       "emergencyLevel": "Mức độ khẩn cấp",
       "createRequestButton": "Tạo yêu cầu",
       "location": "Vị trí",
+      "contact": "Liên hệ",
+      "requested": "Đã tạo yêu cầu",
       "latitude": "Vĩ độ",
       "longitude": "Kinh độ",
       "images": "Thêm hình ảnh",

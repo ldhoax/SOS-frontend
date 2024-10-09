@@ -44,8 +44,8 @@ const RequestForm: React.FC<RequestFormProps> = ({ onClose, darkMode }) => {
     formData.append('phoneNumber', phoneNumber);
     formData.append('email', email);
     formData.append('description', description);
-    formData.append('shortDescription', shortDescription); // Added short description to formData
-    formData.append('emergencyLevel', emergencyLevel);
+    formData.append('short_description', shortDescription);
+    formData.append('emergency_level', emergencyLevel);
     formData.append('location', location);
     formData.append('latitude', latitude);
     formData.append('longitude', longitude);
@@ -77,8 +77,8 @@ const RequestForm: React.FC<RequestFormProps> = ({ onClose, darkMode }) => {
   // };
 
   return (
-    <div className={`fixed inset-0 ${darkMode ? 'bg-gray-800' : 'bg-black'} bg-opacity-50 flex items-center justify-center`}>
-      <div className={`bg-${darkMode ? 'gray-700' : 'white'} p-6 rounded-lg shadow-lg`}>
+    <div className={`fixed inset-0 ${darkMode ? 'bg-gray-800' : 'bg-black'} bg-opacity-50 flex items-center justify-center overflow-y-auto`}>
+      <div className={`bg-${darkMode ? 'gray-700' : 'white'} p-6 rounded-lg shadow-lg max-w-4xl mx-auto`}>
         <h2 className={`text-xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-black'}`}>{t('requester.createRequest')}</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
@@ -112,6 +112,17 @@ const RequestForm: React.FC<RequestFormProps> = ({ onClose, darkMode }) => {
             />
           </div>
           <div className="mb-4">
+            <label htmlFor="location" className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-black'}`}>{t('requester.location')}<span className="text-red-500">*</span></label>
+            <input
+              type="text"
+              id="location"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
+              className={`w-full px-3 py-2 border rounded-md ${darkMode ? 'bg-gray-600' : 'bg-white'}`}
+              required
+            />
+          </div>
+          <div className="mb-4">
             <label htmlFor="emergencyLevel" className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-black'}`}>{t('requester.emergencyLevel')}</label>
             <select
               id="emergencyLevel"
@@ -124,16 +135,6 @@ const RequestForm: React.FC<RequestFormProps> = ({ onClose, darkMode }) => {
               <option value="medium">Medium</option>
               <option value="high">High</option>
             </select>
-          </div>
-          <div className="mb-4">
-            <label htmlFor="location" className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-black'}`}>{t('requester.location')}</label>
-            <input
-              type="text"
-              id="location"
-              value={location}
-              onChange={(e) => setLocation(e.target.value)}
-              className={`w-full px-3 py-2 border rounded-md ${darkMode ? 'bg-gray-600' : 'bg-white'}`}
-            />
           </div>
           <div className="mb-4">
             <label htmlFor="description" className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-black'}`}>{t('requester.description')}</label>
