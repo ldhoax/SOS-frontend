@@ -1,27 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { useQuery } from 'react-query';
 import RequestForm from './RequestForm';
 import { t } from 'i18next';
 
+const fetchRequests = async () => {
+  const response = await fetch(`${import.meta.env.VITE_REQUEST_HOST}/api/v1/requests`);
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
+  const data = await response.json();
+  return data['data'];
+};
+
 const RequesterDashboard: React.FC<{ darkMode: boolean }> = ({ darkMode }) => {
   const [isFormOpen, setIsFormOpen] = useState(false);
-  const [requests, setRequests] = useState([]);
+  const { data: requests, error, isLoading } = useQuery('requests', fetchRequests);
 
-  useEffect(() => {
-    const fetchRequests = async () => {
-      try {
-        const response = await fetch(`${import.meta.env.VITE_REQUEST_HOST}/api/v1/requests`);
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        const data = await response.json();
-        setRequests(data['data']);
-      } catch (error) {
-        console.error('Error fetching requests:', error);
-      }
-    };
-
-    fetchRequests();
-  }, []);
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error fetching requests: {(error as Error).message}</div>;
 
   return (
     <div className={`mx-auto my-8 p-4 rounded-lg ${darkMode ? 'dark:bg-gray-800' : 'bg-white'}`}>
