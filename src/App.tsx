@@ -11,6 +11,7 @@ import Register from './components/Register';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import PlannedFeatures from './components/PlannedFeatures';
+import RequestDetail from './components/requesters/RequestDetail';
 
 
 function App() {
@@ -67,6 +68,7 @@ function App() {
             <Route path="/login" element={<PublicRoute isAuthenticated={isAuthenticated}><Login toggleAuth={toggleAuth} darkMode={darkMode} /></PublicRoute>} />
             <Route path="/register" element={<PublicRoute isAuthenticated={isAuthenticated}><Register darkMode={darkMode} /></PublicRoute>} />
             <Route path="/requester-dashboard" element={<PublicRoute isAuthenticated={isAuthenticated}>{<RequesterDashboard darkMode={darkMode} />}</PublicRoute>} />
+            <Route path="/request-detail/:id" element={<PublicRoute isAuthenticated={isAuthenticated}>{<RequestDetail darkMode={darkMode} />}</PublicRoute>} />
             <Route path="/supporter-dashboard" element={<PrivateRoute isAuthenticated={isAuthenticated}>{<SupporterDashboard darkMode={darkMode} />}</PrivateRoute>} />
             <Route path="/planned-features" element={<PlannedFeatures />} />
           </Routes>

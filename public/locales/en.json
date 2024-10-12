@@ -32,7 +32,9 @@
       "images": "Images",
       "phoneNumber": "Phone Number",
       "atLeastOneValid": "At least one valid email or phone number is required",
-      "view": "View"
+      "view": "View",
+      "requestDetail": "Request Detail",
+      "pickThisRequest": "Pick This Request"
     },
     "supporter": {
       "supporterDashboard": "Supporter Dashboard"

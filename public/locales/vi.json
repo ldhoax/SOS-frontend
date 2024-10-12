@@ -30,7 +30,9 @@
       "shortDescription": "Mô tả ngắn",
       "phoneNumber": "Số điện thoại",
       "atLeastOneValid": "Cần có số điện thoại hoặc email hợp lệ",
-      "view": "Xem"
+      "view": "Xem",
+      "requestDetail": "Chi tiết yêu cầu",
+      "pickThisRequest": "Nhận yêu cầu này"
     },
     "supporter": {
       "supporterDashboard": "Trang quản lý hỗ trợ"
