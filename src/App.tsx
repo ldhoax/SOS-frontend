@@ -12,12 +12,12 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import PlannedFeatures from './components/PlannedFeatures';
 import RequestDetail from './components/requesters/RequestDetail';
-
+import { requesterRoutes, supporterRoutes, publicRoutes } from './routes';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [userRole, setUserRole] = useState<string | null>(null);
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
@@ -59,18 +59,18 @@ function App() {
             toggleDarkMode={toggleDarkMode}
           />
           <Routes>
-            <Route path="/" element={
+            <Route path={publicRoutes.main} element={
               userRole === null ? <RoleSelection /> : (
-                <Navigate to={userRole === 'requester' ? '/requester-dashboard' : '/supporter-dashboard'} replace />
+                <Navigate to={userRole === 'requester' ? requesterRoutes.requesterDashboard : supporterRoutes.supporterDashboard} replace />
               )
             } />
-            <Route path="/role-selection" element={<RoleSelection />} />
-            <Route path="/login" element={<PublicRoute isAuthenticated={isAuthenticated}><Login toggleAuth={toggleAuth} darkMode={darkMode} /></PublicRoute>} />
-            <Route path="/register" element={<PublicRoute isAuthenticated={isAuthenticated}><Register darkMode={darkMode} /></PublicRoute>} />
-            <Route path="/requester-dashboard" element={<PublicRoute isAuthenticated={isAuthenticated}>{<RequesterDashboard darkMode={darkMode} />}</PublicRoute>} />
-            <Route path="/request-detail/:id" element={<PublicRoute isAuthenticated={isAuthenticated}>{<RequestDetail darkMode={darkMode} />}</PublicRoute>} />
-            <Route path="/supporter-dashboard" element={<PrivateRoute isAuthenticated={isAuthenticated}>{<SupporterDashboard darkMode={darkMode} />}</PrivateRoute>} />
-            <Route path="/planned-features" element={<PlannedFeatures />} />
+            <Route path={publicRoutes.roleSelection} element={<RoleSelection />} />
+            <Route path={publicRoutes.login} element={<PublicRoute isAuthenticated={isAuthenticated}><Login toggleAuth={toggleAuth} darkMode={darkMode} /></PublicRoute>} />
+            <Route path={publicRoutes.register} element={<PublicRoute isAuthenticated={isAuthenticated}><Register darkMode={darkMode} /></PublicRoute>} />
+            <Route path={requesterRoutes.requesterDashboard} element={<PublicRoute isAuthenticated={isAuthenticated}><RequesterDashboard darkMode={darkMode} /></PublicRoute>} />
+            <Route path={requesterRoutes.requestDetail} element={<PublicRoute isAuthenticated={isAuthenticated}><RequestDetail darkMode={darkMode} /></PublicRoute>} />
+            <Route path={supporterRoutes.supporterDashboard} element={<PrivateRoute isAuthenticated={isAuthenticated}><SupporterDashboard /></PrivateRoute>} />
+            <Route path={publicRoutes.plannedFeatures} element={<PlannedFeatures />} />
           </Routes>
           <Footer darkMode={darkMode} />
         </div>
