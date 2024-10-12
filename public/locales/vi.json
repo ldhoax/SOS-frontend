@@ -29,10 +29,15 @@
       "images": "Thêm hình ảnh",
       "shortDescription": "Mô tả ngắn",
       "phoneNumber": "Số điện thoại",
-      "atLeastOneValid": "Cần có số điện thoại hoặc email hợp lệ"
+      "atLeastOneValid": "Cần có số điện thoại hoặc email hợp lệ",
+      "view": "Xem"
     },
     "supporter": {
       "supporterDashboard": "Trang quản lý hỗ trợ"
+    },
+    "loadingStatus": {
+      "loading": "Đang tải...",
+      "error": "Lỗi tải yêu cầu: {error.message}"
     }
   }
 }

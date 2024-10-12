@@ -31,10 +31,15 @@
       "requested": "Requested",
       "images": "Images",
       "phoneNumber": "Phone Number",
-      "atLeastOneValid": "At least one valid email or phone number is required"
+      "atLeastOneValid": "At least one valid email or phone number is required",
+      "view": "View"
     },
     "supporter": {
       "supporterDashboard": "Supporter Dashboard"
+    },
+    "loadingStatus": {
+      "loading": "Loading...",
+      "error": "Error fetching request: {error.message}"
     }
   }
 }
