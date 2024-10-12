@@ -51,25 +51,27 @@ function App() {
   return (
     <Router>
       <div className={`min-h-screen ${darkMode ? 'dark:bg-gray-900 dark:text-white' : 'bg-gray-100 text-black'}`}>
-      <Navbar
-          darkMode={darkMode}
-          toggleLanguage={toggleLanguage}
-          toggleDarkMode={toggleDarkMode}
-        />
-        <Routes>
-          <Route path="/" element={
-            userRole === null ? <RoleSelection /> : (
-              <Navigate to={userRole === 'requester' ? '/requester-dashboard' : '/supporter-dashboard'} replace />
-            )
-          } />
-          <Route path="/role-selection" element={<RoleSelection />} />
-          <Route path="/login" element={<PublicRoute isAuthenticated={isAuthenticated}><Login toggleAuth={toggleAuth} darkMode={darkMode} /></PublicRoute>} />
-          <Route path="/register" element={<PublicRoute isAuthenticated={isAuthenticated}><Register darkMode={darkMode} /></PublicRoute>} />
-          <Route path="/requester-dashboard" element={<PublicRoute isAuthenticated={isAuthenticated}>{<RequesterDashboard darkMode={darkMode} />}</PublicRoute>} />
-          <Route path="/supporter-dashboard" element={<PrivateRoute isAuthenticated={isAuthenticated}>{<SupporterDashboard darkMode={darkMode} />}</PrivateRoute>} />
-          <Route path="/planned-features" element={<PlannedFeatures />} />
-        </Routes>
-        <Footer darkMode={darkMode} />
+        <div className="max-w-screen-xl mx-auto">
+          <Navbar
+            darkMode={darkMode}
+            toggleLanguage={toggleLanguage}
+            toggleDarkMode={toggleDarkMode}
+          />
+          <Routes>
+            <Route path="/" element={
+              userRole === null ? <RoleSelection /> : (
+                <Navigate to={userRole === 'requester' ? '/requester-dashboard' : '/supporter-dashboard'} replace />
+              )
+            } />
+            <Route path="/role-selection" element={<RoleSelection />} />
+            <Route path="/login" element={<PublicRoute isAuthenticated={isAuthenticated}><Login toggleAuth={toggleAuth} darkMode={darkMode} /></PublicRoute>} />
+            <Route path="/register" element={<PublicRoute isAuthenticated={isAuthenticated}><Register darkMode={darkMode} /></PublicRoute>} />
+            <Route path="/requester-dashboard" element={<PublicRoute isAuthenticated={isAuthenticated}>{<RequesterDashboard darkMode={darkMode} />}</PublicRoute>} />
+            <Route path="/supporter-dashboard" element={<PrivateRoute isAuthenticated={isAuthenticated}>{<SupporterDashboard darkMode={darkMode} />}</PrivateRoute>} />
+            <Route path="/planned-features" element={<PlannedFeatures />} />
+          </Routes>
+          <Footer darkMode={darkMode} />
+        </div>
       </div>
     </Router>
   );
