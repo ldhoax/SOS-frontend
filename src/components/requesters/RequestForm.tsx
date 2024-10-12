@@ -77,7 +77,7 @@ const RequestForm: React.FC<RequestFormProps> = ({ onClose, darkMode }) => {
   // };
 
   return (
-    <div className={`fixed inset-0 ${darkMode ? 'bg-gray-800' : 'bg-black'} bg-opacity-50 flex items-center justify-center overflow-y-auto`}>
+    <div className={`fixed inset-0 ${darkMode ? 'bg-gray-800' : 'bg-black'} bg-opacity-50 flex items-center justify-center overflow-y-auto z-50`}>
       <div className={`bg-${darkMode ? 'gray-700' : 'white'} p-6 rounded-lg shadow-lg max-w-4xl mx-auto`}>
         <h2 className={`text-xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-black'}`}>{t('requester.createRequest')}</h2>
         <form onSubmit={handleSubmit}>

@@ -31,7 +31,7 @@ const RequesterDashboard: React.FC<{ darkMode: boolean }> = ({ darkMode }) => {
       <div className="mt-4">
         <ul>
           {Array.isArray(requests) && requests.map((request, index) => (
-            <li key={index} className={`border p-4 my-4 rounded-lg relative ${darkMode ? 'bg-gray-700 text-white' : ''} transition duration-500 ease-in-out transform shadow-lg`}>
+            <li key={index} className={`border p-4 my-4 rounded-lg relative ${darkMode ? 'bg-gray-700 text-white' : ''} shadow-lg`}>
               <button className={`absolute top-0 right-0 m-4 ${darkMode ? 'bg-green-600' : 'bg-green-500'} text-white px-4 py-2 rounded`} onClick={() => console.log(`Pick request ${index}`)}>Pick</button>
               <p><strong>{t('requester.shortDescription')}:</strong> {request['short_description']}</p>
               <p><strong>{t('requester.location')}:</strong> {request['location']}</p>
