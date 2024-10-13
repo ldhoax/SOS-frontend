@@ -18,7 +18,7 @@ const Login: React.FC<LoginProps> = ({ toggleAuth, darkMode }) => {
     // Implement your login logic here with phoneNumber and password
     console.log('Logging in with:', phoneNumber, password);
     toggleAuth(); // Set authenticated to true
-    const userRole = localStorage.getItem('userRole');
+    const userRole = localStorage.getItem(import.meta.env.VITE_USER_ROLE_KEY);
     if (userRole === 'supporter') {
       navigate('/supporter-dashboard');
     } else {

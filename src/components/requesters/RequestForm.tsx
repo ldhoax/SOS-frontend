@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
 interface RequestFormProps {
   onClose: () => void;
@@ -8,6 +9,7 @@ interface RequestFormProps {
 
 const RequestForm: React.FC<RequestFormProps> = ({ onClose, darkMode }) => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const [phoneNumber, setPhoneNumber] = useState('');
   const [email, setEmail] = useState('');
   const [description, setDescription] = useState('');
@@ -57,13 +59,16 @@ const RequestForm: React.FC<RequestFormProps> = ({ onClose, darkMode }) => {
     if (!requestHost) {
       throw new Error("VITE_REQUEST_HOST is not defined");
     }
-    console.log(requestHost);
+
     fetch(`${requestHost}/api/v1/requests`, {
       method: 'POST',
       body: formData,
     })
     .then(response => response.json())
-    .then(data => console.log('Success:', data))
+    .then(({ data }) => {
+      localStorage.setItem(import.meta.env.VITE_REQUESTER_TOKEN_KEY, data['token']);
+      navigate(`/request-detail/${data.request['ID']}`);
+    })
     .catch(error => console.error('Error:', error));
     onClose();
   };

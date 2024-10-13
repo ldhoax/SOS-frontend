@@ -21,7 +21,7 @@ function App() {
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    const storedRole = localStorage.getItem('userRole');
+    const storedRole = localStorage.getItem(import.meta.env.VITE_USER_ROLE_KEY);
     if (storedRole) {
       setUserRole(storedRole);
     }

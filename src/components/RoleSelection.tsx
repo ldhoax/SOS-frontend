@@ -8,7 +8,7 @@ const RoleSelection: React.FC = () => {
   const [isOpen, setIsOpen] = useState(true);
 
   const handleRoleSelection = (role: 'requester' | 'supporter') => {
-    localStorage.setItem('userRole', role);
+    localStorage.setItem(import.meta.env.VITE_USER_ROLE_KEY, role);
     setIsOpen(false);
     if (role === 'supporter') {
       navigate('/login');
