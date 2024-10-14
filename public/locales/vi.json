@@ -8,7 +8,9 @@
       "cancel": "Hủy",
       "days": "ngày",
       "hours": "giờ",
-      "minutes": "phút"
+      "minutes": "phút",
+      "username": "Tên đăng nhập",
+      "password": "Mật khẩu"
     },
     "roleSelector": {
       "selectYourRole": "Chọn vai trò của bạn",

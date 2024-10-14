@@ -1,6 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+import { useDispatch, useSelector } from 'react-redux';
+import { loginUser } from './authActions';
 import { useTranslation } from 'react-i18next';
+import { supporterRoutes, requesterRoutes } from '../../routes';
+import { RootState } from '@reduxjs/toolkit/query/react';
 
 interface LoginProps {
   toggleAuth: () => void;
@@ -9,37 +14,35 @@ interface LoginProps {
 
 const Login: React.FC<LoginProps> = ({ toggleAuth, darkMode }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const { t } = useTranslation();
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [password, setPassword] = useState('');
+  const { loading, userInfo, error, userToken, success } = useSelector((state: RootState) => state.auth);
+  const { register, handleSubmit } = useForm();
 
-  const handleLogin = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Implement your login logic here with phoneNumber and password
-    console.log('Logging in with:', phoneNumber, password);
-    toggleAuth(); // Set authenticated to true
-    const userRole = localStorage.getItem(import.meta.env.VITE_USER_ROLE_KEY);
-    if (userRole === 'supporter') {
-      navigate('/supporter-dashboard');
-    } else {
-      navigate('/requester-dashboard');
-    }
+  const onSubmit = (data: any) => {
+    dispatch(loginUser(data));
   };
+
+  const userRole = localStorage.getItem(import.meta.env.VITE_USER_ROLE_KEY);
+  if (userRole === 'supporter') {
+    navigate(supporterRoutes.supporterDashboard);
+  } else {
+    navigate(requesterRoutes.requesterDashboard);
+  }
 
   return (
     <div className="flex justify-center items-center min-h-screen">
       <div className={`p-8 rounded shadow-md w-96 ${darkMode ? 'bg-gray-800' : 'bg-white'}`}>
         <h1 className={`text-2xl font-bold mb-6 text-center ${darkMode ? 'text-white' : 'text-gray-900'}`}>{t('general.login')}</h1>
-        <form onSubmit={handleLogin}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">
-            <label htmlFor="phoneNumber" className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-              {t('requester.phoneNumber')}
+            <label htmlFor="username" className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+              {t('general.username')}
             </label>
             <input
-              type="tel"
-              id="phoneNumber"
-              value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
+              type="text"
+              id="username"
+              {...register('username')}
               className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
                 darkMode ? 'bg-gray-700 text-white border-gray-600' : 'bg-white text-gray-900 border-gray-300'
               }`}
@@ -48,13 +51,12 @@ const Login: React.FC<LoginProps> = ({ toggleAuth, darkMode }) => {
           </div>
           <div className="mb-6">
             <label htmlFor="password" className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-              {t('login.password')}
+              {t('general.password')}
             </label>
             <input
               type="password"
               id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              {...register('password')}
               className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
                 darkMode ? 'bg-gray-700 text-white border-gray-600' : 'bg-white text-gray-900 border-gray-300'
               }`}

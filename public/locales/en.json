@@ -8,7 +8,9 @@
       "cancel": "Cancel",
       "days": "days",
       "hours": "hours",
-      "minutes": "minutes"
+      "minutes": "minutes",
+      "username": "Username",
+      "password": "Password"
     },
     "roleSelector": {
       "selectYourRole": "Select Your Role",
