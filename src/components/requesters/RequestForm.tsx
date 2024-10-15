@@ -55,12 +55,12 @@ const RequestForm: React.FC<RequestFormProps> = ({ onClose, darkMode }) => {
     //   formData.append(`images[${index}]`, image);
     // });
 
-    const requestHost = import.meta.env.VITE_REQUEST_HOST;
+    const requestHost = import.meta.env.VITE_REQUEST_BASE_URL;
     if (!requestHost) {
-      throw new Error("VITE_REQUEST_HOST is not defined");
+      throw new Error("VITE_REQUEST_BASE_URL is not defined");
     }
 
-    fetch(`${requestHost}/api/v1/requests`, {
+    fetch(`${requestHost}/requests`, {
       method: 'POST',
       body: formData,
     })

@@ -6,7 +6,7 @@ import { t } from 'i18next';
 import { FormatedTime } from '../utils/Time';
 import LoadingStatus from '../LoadingStatus';
 const fetchRequests = async () => {
-  const response = await fetch(`${import.meta.env.VITE_REQUEST_HOST}/api/v1/requests`);
+  const response = await fetch(`${import.meta.env.VITE_REQUEST_BASE_URL}/requests`);
   if (!response.ok) {
     throw new Error('Network response was not ok');
   }

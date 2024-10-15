@@ -32,7 +32,7 @@ const RequestDetail: React.FC<{ darkMode: boolean }> = ({ darkMode }) => {
 };
 
 const fetchRequest = async (id: string) => {
-  const response = await fetch(`${import.meta.env.VITE_REQUEST_HOST}/api/v1/requests/${id}`);
+  const response = await fetch(`${import.meta.env.VITE_REQUEST_BASE_URL}/requests/${id}`);
   return response.json();
 };
 
